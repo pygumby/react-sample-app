@@ -9,11 +9,12 @@ import { TrashIcon } from '@heroicons/react/24/outline'
 // Styles
 import styles from './TaskItem.module.css';
 
-const TaskItem = ({task, deleteTask}) => {
+const TaskItem = ({task, deleteTask, toggleTask}) => {
   const [isChecked, setIsChecked] = useState(task.checked)
 
   const handleCheckboxChange = _ => {
     setIsChecked(!isChecked)
+    toggleTask(task.id)
   }
   
   return (
