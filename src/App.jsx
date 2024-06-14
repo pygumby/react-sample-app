@@ -5,9 +5,10 @@ import { useState } from 'react'
 import CustomForm from './components/CustomForm'
 import EditForm from './components/EditForm'
 import TaskList from './components/TaskList'
+import useLocalStorage from './hooks/useLocalStorage'
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useLocalStorage('react-sample-app.tasks', [])
   const [editedTask, setEditedTask] = useState(null)
   const [isEditing, setIsEditing] = useState(null)
   const [prevFocusElem, setPrevFocusElem] = useState(null)
